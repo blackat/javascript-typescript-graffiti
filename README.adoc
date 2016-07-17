@@ -1,6 +1,7 @@
 = JavaScript Typescript Graffiti
 :toc:
 :toc-placement!:
+
 toc::[]
 
 == Introduction

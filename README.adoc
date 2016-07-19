@@ -7,3 +7,9 @@ toc::[]
 == Introduction
 
 == Module, Namespace and ... what else?
+Starting developing in `node.js` one of the first thing I have met was the `require` keyword used to load a module. Then when I moved to a bit more advanced JavaScript I have met the Revealing Module Pattern, later on with TypeScript I have read about concepts like modules and namespaces.
+
+I am really a bit confusing about what they are and when I should use them, so I will try to find explanation step by step.
+
+=== What is a module and why use modules
+IMPORTANT: *Definition:* a module is a way to encapsulate some piece of code into a unit. The unit can be used by other modules and applications.

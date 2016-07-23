@@ -8,7 +8,7 @@ ifdef::env-github[]
 endif::[]
 
 :icons: font
-:iconfont-cdn: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
+:iconfont-cdn: +https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
 
 = JavaScript Typescript Graffiti
 :toc:
@@ -24,4 +24,99 @@ Starting developing in `node.js` one of the first thing I have met was the `requ
 I am really a bit confusing about what they are and when I should use them, so I will try to find explanation step by step.
 
 === What is a module and why use modules
-TIP: *Definition:* a module is a way to encapsulate some piece of code into a unit. The unit can be used by other modules and applications.
+*Definition:* a module is a way to encapsulate some piece of code into a unit. The unit can be used by other modules and applications.
+
+*Why:* global variable are evil as discussed [here](http://c2.com/cgi/wiki?GlobalVariablesAreBad) and
+[square]
+* Clutter up the global namespace and are slower to look up than local variables.
+* Forget you declared a variable somewhere and accidentally re-declare it somewhere else (var foo against foo).
+* Global variables take longer for Javascript to "find" than local variables, not huge but small performance issue.
+
+
+=== Where does Module Pattern comes from?
+The first guy who talked about the JavaScript Module Pattern was Eric Miraglia (YUI) in a [blog post](http://yuiblog.com/blog/2007/06/12/module-pattern/).
+
+==== IIFE, a fundamental construct
+Before talking about *module* I need to introduce a JavaScript [red]#fundamental construct# called IIFE that will enable the module pattern.
+
+The *immediately-invoked function expression (https://en.wikipedia.org/wiki/Immediately-invoked_function_expression[IIFE] /iffy/)* is a JavaScript design pattern to create and immediately invoke an anonymous function.
+
+.Declaration styles
+[source, javascript]
+----
+(function () {
+  …
+  // access to global variables
+})();
+
+(function () {
+  …
+  // access to global variables
+}());  // Douglas Crockford's style
+----
+
+.Passing values
+[source, javascript]
+----
+(function (x, y) { … })('foo', 'bar');
+----
+
+// todo: explain scope, function declaration vs function expression
+
+==== Implied globals
+To see how the pattern is applied we can have a look at AngularJs source code.
+
+.AngularJs partial source code
+[source, javascript]
+----
+(function (window) {
+    'use strict';
+
+    ...
+
+    /** @name angular */
+    var angular = window.angular || (window.angular = {})
+
+    ...
+
+    publishExternalAPI(angular);
+
+    function publishExternalAPI(angular) {
+        extend(angular, {'bootstrap': bootstrap});
+    }
+
+    function bootstrap(element, modules, config) {...}
+})(window);
+----
+Some parts of the code has been remove in order to focus on the IIFE. The function is invoked passing the `window` object, inside of the scope a property named `angular` is assign to the `window` object and initialized via the _object literal_ if it does not exist. Once done, the public API is attached to the angular object. Now `angular` framework is globally reachable.
+
+===== How to create a global variables
+There are three ways to create a [red]#global variable# in JavaScript and remember we are talking about *global variable*, it will be useful for the next argument.
+
+.Three way to declare a global variable in JavaScript
+[source, javascript]
+----
+window.s = 'felix'    // declare variable s
+s = 'felix'           // declare variable s
+var s = 'felix'       // declare variable s
+----
+
+.Explanation
+[TIP]
+====
+[square]
+* *window global:* the variable is directly set on the `window` object. Working in a browser the `window` object is root scope, there is nothing higher than that.
+* *implied global:* when a variable name is used, the interpreter looks in the scope hierarchy to find a variable with that name, if there is not an assignment involving that variable the interpreter will look in the global scope. If it exist, the assignment causes the overwrite of the value, otherwise a new variable is created.
+====
+
+==== Module export
+In the AngularJs example, the `angular` [red]#global object# is created. Sometimes we don't want to create a global object but just [red]#declare#
+
+= Bibliography
+[bibliography]
+.Tutorials
+- [[[re-introduction]]] link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript[A re-introduction to JavaScript]
+
+.Blog posts
+
+.Books

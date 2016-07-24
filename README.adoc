@@ -1,4 +1,12 @@
 
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 :icons: font
 :iconfont-cdn: +https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
 
@@ -86,7 +94,7 @@ Some parts of the code has been remove in order to focus on the IIFE. The functi
 In the AngularJs example, the `angular` [red]#global object# is created. Sometimes we don't want to create a global object but just [red]#declare#
 
 
-[appendix]
+= JavaScript Graffiti
 Variable Scoping and Hoisting
 =============================
 == Variable scope

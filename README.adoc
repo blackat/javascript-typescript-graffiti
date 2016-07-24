@@ -3,7 +3,6 @@
 :iconfont-cdn: +https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
 
 = JavaScript Typescript Graffiti
-:doctype: book
 :toc:
 :toc-placement!:
 
@@ -83,8 +82,18 @@ To see how the pattern is applied we can have a look at AngularJs source code.
 ----
 Some parts of the code has been remove in order to focus on the IIFE. The function is invoked passing the `window` object, inside of the scope a property named `angular` is assign to the `window` object and initialized via the _object literal_ if it does not exist. Once done, the public API is attached to the angular object. Now `angular` framework is globally reachable.
 
-===== How to create a global variables
-There are three ways to create a [red]#global variable# in JavaScript and remember we are talking about *global variable*, it will be useful for the next argument.
+==== Module export
+In the AngularJs example, the `angular` [red]#global object# is created. Sometimes we don't want to create a global object but just [red]#declare#
+
+
+[appendix]
+Variable Scoping and Hoisting
+=============================
+== Variable scope
+Function level and block level
+
+=== How to create a global variable
+There are [blue]#three ways# to create a [red]#global variable# in JavaScript and remember we are talking about *global variable*, it will be useful for the next argument.
 
 .Three way to declare a global variable in JavaScript
 [source, javascript]
@@ -103,14 +112,6 @@ var s = 'felix'       // declare variable s
 * *declared global:* use `var` reserved keyword to declare a variable. If a local variable and the global variable have the same identifier, the local variable will take the precedence ([red]#shadowing# footnote:[In JavaScript _shadowing_ is a behavior that allows a local variable to take the precedence over the outer or global variable having the same identifier, the inner variable over the outer.]).
 ====
 
-==== Module export
-In the AngularJs example, the `angular` [red]#global object# is created. Sometimes we don't want to create a global object but just [red]#declare#
-
-
-[appendix]
-Variable Scoping and Hoisting
-=============================
-e
 
 = Bibliography
 [bibliography]

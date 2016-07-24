@@ -1,16 +1,9 @@
 
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-:important-caption: :heavy_exclamation_mark:
-:caution-caption: :fire:
-:warning-caption: :warning:
-endif::[]
-
 :icons: font
 :iconfont-cdn: +https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css
 
 = JavaScript Typescript Graffiti
+:doctype: book
 :toc:
 :toc-placement!:
 
@@ -106,17 +99,28 @@ var s = 'felix'       // declare variable s
 ====
 [square]
 * *window global:* the variable is directly set on the `window` object. Working in a browser the `window` object is root scope, there is nothing higher than that.
-* *implied global:* when a variable name is used, the interpreter looks in the scope hierarchy to find a variable with that name, if there is not an assignment involving that variable the interpreter will look in the global scope. If it exist, the assignment causes the overwrite of the value, otherwise a new variable is created.
+* *implied global:* when an identifier is used, the interpreter resolves it traversing up the [blue]#scope chain# footnote:[More on the scope chain and variable resolution in the David Shariff's post <<identifier-resolution>>.]. If the identifier is not found in the local scope, the global one is involved. If not found a new global variable is created otherwise the old value is updated.
+* *declared global:* use `var` reserved keyword to declare a variable. If a local variable and the global variable have the same identifier, the local variable will take the precedence ([red]#shadowing# footnote:[In JavaScript _shadowing_ is a behavior that allows a local variable to take the precedence over the outer or global variable having the same identifier, the inner variable over the outer.]).
 ====
 
 ==== Module export
 In the AngularJs example, the `angular` [red]#global object# is created. Sometimes we don't want to create a global object but just [red]#declare#
 
+
+[appendix]
+Variable Scoping and Hoisting
+=============================
+e
+
 = Bibliography
 [bibliography]
 .Tutorials
-- [[[re-introduction]]] link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript[A re-introduction to JavaScript]
+- [[[js-re-introduction]]] link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript[A re-introduction to JavaScript]
 
 .Blog posts
+- [[[identifier-resolution]]] link:http://davidshariff.com/blog/javascript-scope-chain-and-closures/[Identifier resolution and closures in the JavaScript scope chain]
+- [[[closures]]] link:http://jibbering.com/faq/notes/closures/[Javascript closures]
+- [[[learn-closures]]] link:http://ejohn.org/apps/learn/#48[Learn closures]
+- [[[learn-advanced-js]]] link:http://ejohn.org/apps/learn/[Learning advanced JavaScript]
 
 .Books

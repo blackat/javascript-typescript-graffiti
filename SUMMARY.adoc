@@ -1,4 +1,4 @@
 = Summary
 
-. link:introduction.adoc[Introduction]
+. link:chapters/introduction.adoc[Introduction]
 

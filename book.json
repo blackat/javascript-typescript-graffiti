@@ -1,4 +1,5 @@
 {
+    "root": "./docs",
     "plugins": ["edit-link", "github"], 
     "pluginsConfig": { 
         "edit-link": { 

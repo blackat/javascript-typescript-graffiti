@@ -1,12 +1,16 @@
 {
-    "root": "./docs",
-    "plugins": ["edit-link", "github"], 
-    "pluginsConfig": { 
-        "edit-link": { 
-            "base": "https://github.com/blackat/javascript-typescript-graffiti/tree/master", 
-            "label": "Edit This Page" 
-        }, "github": { 
-                "url": "https://github.com/blackat/javascript-typescript-graffiti" 
-            } 
+  "root": "./docs",
+  "plugins": [
+    "edit-link",
+    "github"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/blackat/javascript-typescript-graffiti/tree/master",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/blackat/javascript-typescript-graffiti"
     }
+  }
 }

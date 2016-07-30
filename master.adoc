@@ -1,15 +1,14 @@
 = JavaScript Typescript Graffiti
-
 :author: Blackat
 :doctype: book
 :docinfo:
-:toc2:
+:toc2: left
 :icons: font
 :lang: en
 :sectnums:
 
-// mapping for FontAwsome
-:tip-caption: fa-lightbulb-o
+// mapping for FontAwesome
+:tip-caption: :fa-lightbulb-o:
 //note - icon-info-sign
 //warning - icon-warning-sign
 //important - icon-exclamation-sign

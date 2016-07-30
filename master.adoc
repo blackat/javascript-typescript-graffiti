@@ -1,1 +1,11 @@
+= JavaScript Typescript Graffiti
+
+:author: Blackat
+:doctype: book
+:docinfo:
+:toc: left
+:icons:
+:lang: en
+:sectnums:
+
 include::book/javascript-graffiti/javascript-graffiti.adoc[]

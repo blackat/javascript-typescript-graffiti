@@ -3,8 +3,8 @@
 :author: Blackat
 :doctype: book
 :docinfo:
-:toc: left
-:icons:
+:toc:
+:icons: font
 :lang: en
 :sectnums:
 

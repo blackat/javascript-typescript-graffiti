@@ -9,7 +9,7 @@
 :sectnums:
 
 // mapping for FontAwsome
-:tip-caption :icon-pushpin:
+:tip-caption: fa-lightbulb-o
 //note - icon-info-sign
 //warning - icon-warning-sign
 //important - icon-exclamation-sign

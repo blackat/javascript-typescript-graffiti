@@ -3,9 +3,16 @@
 :author: Blackat
 :doctype: book
 :docinfo:
-:toc:
+:toc2:
 :icons: font
 :lang: en
 :sectnums:
+
+// mapping for FontAwsome
+:tip-caption :icon-pushpin:
+//note - icon-info-sign
+//warning - icon-warning-sign
+//important - icon-exclamation-sign
+//caution - icon-bolt (or icon-minus)
 
 include::book/javascript-graffiti/javascript-graffiti.adoc[]

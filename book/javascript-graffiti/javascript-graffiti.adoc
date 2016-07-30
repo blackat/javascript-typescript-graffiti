@@ -1,0 +1,3 @@
+== JavaScript Graffiti
+
+include::sections/scope-variables.adoc[]

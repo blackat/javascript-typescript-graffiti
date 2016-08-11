@@ -1,5 +1,5 @@
 == Variable scope
-Function level and block level
+//TODO: Function level and block level
 
 === Global variable and how to create it
 .Definition 1
@@ -42,25 +42,25 @@ But how could I know which declaration method has been used? In general [red]#th
 .Window global
 [source, javascript]
 ----
-> window.s = 'felix';
-> console.log(Object.getOwnPropertyDescriptor(window, 's'));
-> Object {value: "felix", writable: true, enumerable: true, configurable: true}
+window.s = 'felix';
+console.log(Object.getOwnPropertyDescriptor(window, 's'));
+Object {value: "felix", writable: true, enumerable: true, configurable: true}
 ----
 
 .Implied global
 [source, javascript]
 ----
-> s = 'felix';
-> console.log(Object.getOwnPropertyDescriptor(window, 's'));
-> Object {value: "felix", writable: true, enumerable: true, configurable: true}
+s = 'felix';
+console.log(Object.getOwnPropertyDescriptor(window, 's'));
+Object {value: "felix", writable: true, enumerable: true, configurable: true}
 ----
 
 .Declared global
 [source, javascript]
 ----
-> s = 'felix';
-> console.log(Object.getOwnPropertyDescriptor(window, 's'));
-> Object {value: "felix", writable: true, enumerable: true, configurable: false}
+s = 'felix';
+console.log(Object.getOwnPropertyDescriptor(window, 's'));
+Object {value: "felix", writable: true, enumerable: true, configurable: false}
 ----
 
 In the [red]#declared global# case the `configurable` property is `false`!
@@ -73,9 +73,9 @@ So if I try to delete the property
 .Declared global
 [source, javascript]
 ----
-> var s = 'felix';
-> delete window.s
-> false
+var s = 'felix';
+delete window.s
+false
 ----
 
 and having a look at the link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete[MDN page] of the `delete` operator we can read that

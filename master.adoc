@@ -8,7 +8,7 @@
 :sectnums:
 
 // mapping for FontAwesome
-:tip-caption: :fa-lightbulb-o:
+//:tip-caption: :fa-lightbulb-o:
 //note - icon-info-sign
 //warning - icon-warning-sign
 //important - icon-exclamation-sign

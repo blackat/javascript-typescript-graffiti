@@ -2,6 +2,6 @@
 
 Experimental book/project, alpha version.
 
--  [JavaScript TypeScript Graffiti html](https://blackat.github.io/javascript-typescript-graffiti/index.html)
+-  https://blackat.github.io/javascript-typescript-graffiti/index.html[JavaScript TypeScript Graffiti html]
 
--  [JavaScript TypeScript Graffiti html](https://blackat.github.io/javascript-typescript-graffiti/master.pdf)
+-  https://blackat.github.io/javascript-typescript-graffiti/master.pdf[JavaScript TypeScript Graffiti pdf]

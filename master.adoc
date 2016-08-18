@@ -16,4 +16,4 @@
 
 include::book/javascript-graffiti/javascript-graffiti.adoc[]
 
-include::book/javascript-graffiti/typescript-graffiti.adoc[]
+include::book/typescript-graffiti/typescript-graffiti.adoc[]

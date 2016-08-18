@@ -1,2 +1,2 @@
-== Interfaces
+=== Interfaces
 Type-checking is based on the shape that objects have.

@@ -1,7 +1,7 @@
-== Variable scope
+=== Variable scope
 //TODO: Function level and block level
 
-=== Global variable and how to create it
+==== Global variable and how to create it
 .Definition 1
 [quote, Douglas Crockford, JavaScript: The Good Parts]
 _____
@@ -36,7 +36,7 @@ var s = 'felix';       // declared global
 ** `console.log(s) // felix`
 ====
 
-==== What is the difference?
+===== What is the difference?
 But how could I know which declaration method has been used? In general [red]#there is no difference#, the variable becomes a property of the global object `window`. Going a bit more into details through the method `Object.getOwnPropertyDescriptor` footnote:[For method details please refer to link:https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor[MDN page].] we can see that there is a difference:
 
 .Window global
@@ -93,7 +93,7 @@ s = 'felix';            // creates the property x on the global object
 var s = 'felix';        // creates the property y on the global object, and marks it as non-configurable
 ----
 
-==== Use strict?
+===== Use strict?
 Create global variables is in general a bad practice, even if some global variable should exists, but the [red]#implied global# declaration is really a bad bad practice because we can accidentally create a global variable and have some strange effect later on in the application execution. Using the `strict` mode can protect against accidentally implied global declaration:
 
 .Use strict mode

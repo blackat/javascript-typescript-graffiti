@@ -5,3 +5,5 @@ Experimental book/project, alpha version.
 -  https://blackat.github.io/javascript-typescript-graffiti/index.html[JavaScript TypeScript Graffiti html]
 
 -  https://blackat.github.io/javascript-typescript-graffiti/master.pdf[JavaScript TypeScript Graffiti pdf]
+
+- https://travis-ci.org/blackat/javascript-typescript-graffiti[Travis build]

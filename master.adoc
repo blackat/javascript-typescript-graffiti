@@ -15,3 +15,5 @@
 //caution - icon-bolt (or icon-minus)
 
 include::book/javascript-graffiti/javascript-graffiti.adoc[]
+
+include::book/javascript-graffiti/typescript-graffiti.adoc[]
